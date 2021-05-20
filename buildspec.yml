@@ -18,8 +18,8 @@ phases:
 #       - aws configure set aws_access_key_id AKIASLDCDZO2YJLESDX2
 #       - aws configure set aws_secret_access_key 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
 #       - aws configure set default.region ap-south-1
-      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/f4s5q9u6
-      - REPOSITORY_URI=public.ecr.aws/f4s5q9u6/infyshopuser
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 161312393096.dkr.ecr.ap-south-1.amazonaws.com
+      - REPOSITORY_URI=161312393096.dkr.ecr.ap-south-1.amazonaws.com/userrepo
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
       - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip
