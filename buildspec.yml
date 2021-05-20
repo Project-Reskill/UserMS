@@ -5,7 +5,7 @@ env:
     LOGIN: infyshopusersecretmanager:sonartoken
     HOST: infyshopusersecretmanager:host
     Organization: infyshopusersecretmanager:organization
-    Project: infyshopusersecretmanager:projectkey
+    Project: infyshopusersecretmanager:projectKey
 
 phases:
   install:
