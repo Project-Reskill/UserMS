@@ -15,7 +15,7 @@ phases:
     commands:
       - echo Logging into Amazon ECR
       - aws --version
-      - $(aws ecr get-login --no-include-email --region us-east-2)
+#      - $(aws ecr get-login --no-include-email --region us-east-2)
       - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/f4s5q9u6
       - REPOSITORY_URI=public.ecr.aws/f4s5q9u6/infyshopuser
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
